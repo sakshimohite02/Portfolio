@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sakshi Mohite | Developer Portfolio</title>
+
+<!-- Typed JS -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+
+<button onclick="toggleMode()" id="modeBtn">🌙</button>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<img src="img1.jpg">
+
+<h1>Hi, I'm <span>Sakshi Mohite</span></h1>
+
+<p>I am <span id="typing"></span></p>
+
+<div class="buttons">
+<a href="#projects">View Work</a>
+<a href="#contact">Hire Me</a>
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="glass">
+
+<p>
+Hello! I'm <b>Sakshi Mohite</b>, an enthusiastic and passionate aspiring web developer currently pursuing my Bachelor's degree in Computer Applications. I enjoy building modern, responsive, and user-friendly web applications that provide great user experiences.
+</p>
+
+<br>
+
+<p>
+My journey started with HTML, CSS, and JavaScript, and gradually expanded to frameworks like Angular and React. I love transforming creative ideas into functional and visually appealing websites.
+</p>
+
+<br>
+
+<p>
+I am particularly interested in frontend development and UI design. I enjoy learning new technologies and building projects that help me improve my development skills.
+</p>
+
+<br>
+
+<p>
+My goal is to become a professional full-stack developer and contribute to building innovative digital products that solve real-world problems.
+</p>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>My Skills</h2>
+
+<div class="glass">
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+<p>HTML</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+<p>CSS</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+<p>JavaScript</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
+<p>Angular</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+<p>React</p>
+</div>
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg">
+<p>Bootstrap</p>
+</div>
+
+
+<div class="skill-card">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
+<p>MySQL</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+
+
+<h3>Portfolio Website</h3>
+
+<p>Responsive developer portfolio website built using HTML, CSS and JavaScript.</p>
+
+<a href="#">Live Demo</a>
+<a href="#">GitHub</a>
+
+</div>
+
+<div class="project-card">
+
+
+<h3>E-Commerce Website</h3>
+
+<p>Online shopping website with product catalog and responsive design.</p>
+
+<a href="#">Live Demo</a>
+<a href="#">GitHub</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="glass">
+
+<form id="contactForm">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<textarea id="message" rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2024 Sakshi Mohite | Developer Portfolio</p>
+
+</footer>
+
+<script>
+
+/* DARK MODE */
+
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+
+/* TYPING ANIMATION */
+
+new Typed("#typing",{
+
+strings:["Web Developer","Angular Developer","React Learner"],
+typeSpeed:60,
+backSpeed:40,
+loop:true
+
+});
+
+/* EMAIL JS */
+
+(function(){
+emailjs.init("YOUR_PUBLIC_KEY");
+})();
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
+
+from_name:document.getElementById("name").value,
+from_email:document.getElementById("email").value,
+message:document.getElementById("message").value
+
+}).then(()=>{
+
+alert("Message Sent Successfully!");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+
